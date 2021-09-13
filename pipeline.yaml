@@ -72,7 +72,7 @@ Resources:
             - Type: BASE_REF
               Pattern: !Sub '^refs/heads/develop$'
           - - Type: EVENT
-              Pattern: 'PULL_REQUEST_MERGE
+              Pattern: 'PULL_REQUEST_MERGE'
             - Type: BASE_REF
               Pattern: !Sub '^refs/heads/main$' 
       Environment:
