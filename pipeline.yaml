@@ -68,13 +68,15 @@ Resources:
         Webhook: true
         FilterGroups:
           - - Type: EVENT
-              Pattern: 'PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED'
+              Pattern: 'PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED, PULL_REQUEST_MERGE'
             - Type: BASE_REF
+              Pattern: !Sub '^refs/heads/main$'
+            - Type: HEAD_REF
               Pattern: !Sub '^refs/heads/develop$'
-          - - Type: EVENT
-              Pattern: 'PULL_REQUEST_MERGE'
-            - Type: BASE_REF
-              Pattern: !Sub '^refs/heads/main$' 
+#           - - Type: EVENT
+#               Pattern: 'PULL_REQUEST_MERGE'
+#             - Type: BASE_REF
+#               Pattern: !Sub '^refs/heads/main$' 
       Environment:
         Type: LINUX_CONTAINER
         ComputeType: BUILD_GENERAL1_SMALL
