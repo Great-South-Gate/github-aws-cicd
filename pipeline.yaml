@@ -50,7 +50,7 @@ Resources:
       ServerType: GITHUB
       Token: >-
         {{resolve:secretsmanager:GITHUB_ACCES:SecretString:GITHUB_ACCESS_TOKEN}}
-  CodeBuilProject:
+  CodeBuildProject:
     Type: 'AWS::CodeBuild::Project'
     Properties:
       Name: !Ref 'AWS::StackName'
