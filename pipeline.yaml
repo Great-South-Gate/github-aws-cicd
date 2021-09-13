@@ -71,6 +71,8 @@ Resources:
               Pattern: 'PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED'
             - Type: BASE_REF
               Pattern: !Sub '^refs/heads/main$'
+            - Type: HEAD_REF
+              Pattern: !Sub '^refs/heads/develop$'
       Environment:
         Type: LINUX_CONTAINER
         ComputeType: BUILD_GENERAL1_SMALL
