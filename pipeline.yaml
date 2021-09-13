@@ -69,26 +69,14 @@ Resources:
         FilterGroups:
           - - Type: EVENT
               Pattern: PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED, PULL_REQUEST_REOPENED
+            - Type: HEAD_REF
+              Pattern: 'refs/heads/develop$'
             - Type: BASE_REF
-              Pattern: !Sub "refs/heads/${GithubBranchName}$"
-              ExcludeMatchedPattern: false
+              Pattern: 'refs/heads/main$'
           - - Type: EVENT
               Pattern: PUSH
             - Type: HEAD_REF
-              Pattern: !Sub "refs/heads/${GithubBranchName}$"
-              ExcludeMatchedPattern: false
-#           - - Type: EVENT
-#               Pattern: 'PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED, PULL_REQUEST_MERGE'
-#             - Type: HEAD_REF
-#               Pattern: '^refs/heads/main$'
-#             - Type: BASE_REF
-#               Pattern: !Sub '^refs/heads/main$'
-#             - Type: HEAD_REF
-#               Pattern: !Sub '^refs/heads/develop$'
-#           - - Type: EVENT
-#               Pattern: 'PULL_REQUEST_MERGE'
-#             - Type: BASE_REF
-#               Pattern: !Sub '^refs/heads/main$' 
+              Pattern: 'refs/heads/develop$'
       Environment:
         Type: LINUX_CONTAINER
         ComputeType: BUILD_GENERAL1_SMALL
